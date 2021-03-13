@@ -1137,11 +1137,11 @@ footer .copyright {
 }
 
 .post .post-thumbnail {
-  width: 30%;
+  width: 20%;
   max-width: 100%;
   min-height: 11rem;
-  -webkit-background-size: cover;
-          background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   background-position: 50% 50%;
 }
 
@@ -1380,8 +1380,6 @@ a.newer-posts:hover {
             flex-direction: column;
   }
   .post .post-thumbnail {
-    background-size: contain;
-    background-repeat: no-repeat;
     width: 100%;
   }
   .post .post-content {
