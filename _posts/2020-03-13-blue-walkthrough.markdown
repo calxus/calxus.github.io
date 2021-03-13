@@ -10,7 +10,7 @@ tags: [Easy, Windows, Retired, CVE]
 ## Overview
 Blue, while possibly the most simple machine on Hack The Box, demonstrates the severity of the EternalBlue exploit, which has been used in multiple large-scale ransomware and crypto-mining attacks since it was leaked publicly.
 ## Enumeration
-```
+```shell
 ┌──[10.10.14.27]-(calxus㉿calxus)-[~]
 └─$ sudo nmap -p- -T4 -sV 10.129.112.220
 Starting Nmap 7.91 ( https://nmap.org ) at 2021-03-13 18:53 GMT
@@ -28,7 +28,7 @@ PORT      STATE SERVICE      VERSION
 49156/tcp open  msrpc        Microsoft Windows RPC
 49157/tcp open  msrpc        Microsoft Windows RPC
 ```
-```
+```shell
 ┌──[10.10.14.27]-(calxus㉿calxus)-[~]
 └─$ sudo nmap -p139,445 --script vuln 10.129.112.225                                                                                                                                                                                   130 ⨯
 Starting Nmap 7.91 ( https://nmap.org ) at 2021-03-13 19:36 GMT
