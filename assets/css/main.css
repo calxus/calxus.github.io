@@ -1245,6 +1245,11 @@ a.newer-posts:hover {
 
 .page-cover-image .page-image {
   object-fit: scale-down;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5px;
+  display: block;
+
 }
 
 .page-footer {
@@ -1375,6 +1380,8 @@ a.newer-posts:hover {
             flex-direction: column;
   }
   .post .post-thumbnail {
+    background-size: contain;
+    background-repeat: no-repeat;
     width: 100%;
   }
   .post .post-content {
