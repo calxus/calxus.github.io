@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>http://localhost:4000/how-i-rest-from-work/</loc>
+<loc>http://localhost:4000/blue-walkthrough/</loc>
 <lastmod>2020-03-13T15:04:22+00:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/legacy-walkthrough/</loc>
+<lastmod>2020-03-14T19:43:22+00:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/lame-walkthrough/</loc>
+<lastmod>2020-03-16T21:11:22+00:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/hackthebox/</loc>
 </url>
 <url>
 <loc>http://localhost:4000/</loc>
