@@ -28,6 +28,7 @@ PORT      STATE SERVICE      VERSION
 49156/tcp open  msrpc        Microsoft Windows RPC
 49157/tcp open  msrpc        Microsoft Windows RPC
 ```
+From this we can see that the ports of most interest are 135,139,445. Before attempting to scan shares that maybe accessible anonymously a quick vulnerability scan shows that the server is vulnerable to EternalBlue. With the box being named Blue it is safe to assume this is a sensible attack vector.
 ```
 ┌──[10.10.14.27]-(calxus㉿calxus)-[~]
 └─$ sudo nmap -p139,445 --script vuln 10.129.112.225                                                                                                                                                                                   130 ⨯
@@ -57,5 +58,17 @@ Host script results:
 |       https://technet.microsoft.com/en-us/library/security/ms17-010.aspx
 |_      https://blogs.technet.microsoft.com/msrc/2017/05/12/customer-guidance-for-wannacrypt-attacks/
 ```
+Having identified a route forward lets move on to the exploitation phase.
 ## Foothold
+```
+┌──[10.10.14.27]-(calxus㉿calxus)-[~]
+└─$ searchsploit eternalblue
+----------------------------------------------------------------- --------------------------------
+ Exploit Title                                                   |  Path
+----------------------------------------------------------------- --------------------------------
+Microsoft Windows 7/2008 R2 - 'EternalBlue' SMB Remote Code Ex   | windows/remote/42031.py
+Microsoft Windows 7/8.1/2008 R2/2012 R2/2016 R2 - 'EternalBlue'  | windows/remote/42315.py
+Microsoft Windows 8/8.1/2012 R2 (x64) - 'EternalBlue' SMB Remote | windows_x86-64/remote/42030.py
+----------------------------------------------------------------- --------------------------------
+```
 ## Privilege Escalation
