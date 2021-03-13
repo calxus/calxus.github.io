@@ -1137,11 +1137,11 @@ footer .copyright {
 }
 
 .post .post-thumbnail {
-  width: 30%;
+  width: 20%;
   max-width: 100%;
   min-height: 11rem;
-  -webkit-background-size: cover;
-          background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
   background-position: 50% 50%;
 }
 
@@ -1244,8 +1244,12 @@ a.newer-posts:hover {
 }
 
 .page-cover-image .page-image {
-  width: 100%;
-  height: 100%;
+  object-fit: scale-down;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5px;
+  display: block;
+
 }
 
 .page-footer {
