@@ -63,7 +63,7 @@ In order to run it I used a docker container as we need to install dependencies 
 └─$ sudo docker run -v "$(pwd)":/lame -it --entrypoint /bin/bash python:2.7.18-stretch
 root@2d402da68463:/# cd /lame
 root@2d402da68463:/lame# pip install impacket
-root@2d402da68463:/lame# pip install 
+root@2d402da68463:/lame# pip install pysmb
 root@2d402da68463:/lame# python samba-exploit.py 10.129.113.79
 ```
 Then we can start a listener, and after executing the exploit we should receive a shell.
