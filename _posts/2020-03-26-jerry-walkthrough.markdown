@@ -1,12 +1,12 @@
 ---
 layout: post
-title: Hack the Box - Lame
+title: Hack the Box - Jerry
 date: 2020-03-26 16:25:22 +0100
 description: Although Jerry is one of the easier machines on Hack The Box, it is realistic as Apache Tomcat is often found exposed and configured with common or weak credentials.
-img: lame.png
-fig-caption: Lame
+img: jerry.png
+fig-caption: Jerry
 categories: HackTheBox
-tags: [Easy, Linux, Retired, CVE]
+tags: [Easy, Windows, Retired, CVE]
 ---
 ## Overview
 Although Jerry is one of the easier machines on Hack The Box, it is realistic as Apache Tomcat is often found exposed and configured with common or weak credentials.
