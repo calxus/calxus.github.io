@@ -1,7 +1,7 @@
 title: Calxus Blog
 description: Calxus' personal blog to document the mischief of a DevSecOps Engineer 
 permalink: ':title/'
-baseurl: "/"
+baseurl: ""
 url: "https://calxus.github.io"
 
 author: Calxus
