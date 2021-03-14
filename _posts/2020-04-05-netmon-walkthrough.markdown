@@ -33,6 +33,7 @@ PORT      STATE SERVICE
 49668/tcp open  unknown
 49669/tcp open  unknown
 ```
+From the initial scan the ports that seem of immediate interest are 21 and 80. When attempting to connect to the FTP server, anonymous access is allowed and gives user access to the filesystem.
 ```
 ┌──[10.10.14.27]-(calxus㉿calxus)-[~/hackthebox/jerry]
 └─$ ftp 10.129.113.107
