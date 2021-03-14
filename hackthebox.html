@@ -7,7 +7,7 @@ permalink: /hackthebox/
   {% if post.categories[0] == 'HackTheBox' %}
     <article class="post">
       {% if post.img %}
-        <a class="post-thumbnail" style="background-image: url({{"/assets/img/" | prepend: site.baseurl | append : post.img}})" href="{{post.url | prepend: site.baseurl}}"></a>
+        <a class="post-thumbnail lazy" style="data-bg: url({{"/assets/img/" | prepend: site.baseurl | append : post.img}})" href="{{post.url | prepend: site.baseurl}}"></a>
       {% else %}
       {% endif %}
       <div class="post-content">
