@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Hack the Box - Shocker
-date: 2020-05-24 12:26:22 +0100
+date: 2020-06-03 12:26:22 +0100
 description: Shocker, while fairly simple overall, demonstrates the severity of the renowned Shellshock exploit, which affected millions of public-facing servers.
 img: shocker.png
 fig-caption: Shocker
