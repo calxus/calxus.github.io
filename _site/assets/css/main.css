@@ -62,7 +62,7 @@ main {
  * Add the correct margin in IE 8.
  */
 figure {
-  margin: 1em 40px;
+  margin: em 40px;
 }
 
 /**
@@ -142,7 +142,7 @@ kbd,
 samp {
   font-family: monospace, monospace;
   /* 1 */
-  font-size: 1em;
+  font-size: 0.8em;
   /* 2 */
 }
 
@@ -444,7 +444,6 @@ template {
 }
 
 .highlighter-rouge {
-  color: #ce887b;
   font-weight: 400;
   border: 1px solid #607D8B;
   -webkit-border-radius: 3px;

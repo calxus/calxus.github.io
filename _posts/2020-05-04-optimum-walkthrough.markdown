@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Hack the Box - Optimum
-date: 2020-04-25 23:23:22 +0100
+date: 2020-05-04 23:23:22 +0100
 description: Optimum is a beginner-level machine which mainly focuses on enumeration of services with known exploits. Both exploits are easy to obtain and have associated Metasploit modules, making this machine fairly simple to complete.
 img: optimum.png
 fig-caption: Optimum
