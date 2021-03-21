@@ -61,6 +61,14 @@
 <lastmod>2020-07-12T22:11:22+01:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/nibbles-walkthrough/</loc>
+<lastmod>2020-07-22T20:25:22+01:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/buff-walkthrough/</loc>
+<lastmod>2020-08-01T21:45:22+01:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/home-network-infrastructure/</loc>
 <lastmod>2021-03-21T15:08:22+00:00</lastmod>
 </url>
@@ -78,5 +86,8 @@
 </url>
 <url>
 <loc>http://localhost:4000/page/2/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/page/3/</loc>
 </url>
 </urlset>
