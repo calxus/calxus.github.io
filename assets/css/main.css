@@ -1155,6 +1155,15 @@ footer .copyright {
   background-position: 50% 50%;
 }
 
+.post .post-thumbnail-homenetwork {
+  width: 20%;
+  max-width: 100%;
+  min-height: 11rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
 .post .post-content {
   padding: 1rem;
   width: 70%;
