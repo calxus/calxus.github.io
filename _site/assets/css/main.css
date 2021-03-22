@@ -1401,6 +1401,9 @@ a.newer-posts:hover {
   .post .post-thumbnail {
     width: 100%;
   }
+  .post .post-thumbnail-homenetwork {
+    width: 100%;
+  }
   .post .post-content {
     width: 100%;
   }
@@ -1490,6 +1493,10 @@ a.newer-posts:hover {
             flex-direction: column;
   }
   .post .post-thumbnail {
+    width: 100%;
+  }
+
+  .post .post-thumbnail-homenetwork {
     width: 100%;
   }
   .post .post-content {
