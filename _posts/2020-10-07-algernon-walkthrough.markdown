@@ -3,10 +3,10 @@ layout: post
 title: Proving Grounds - Algernon
 date: 2020-09-18 12:16:22 +0100
 description: Algernon is an easy Windows box featuring an outdated installation of a mail server. It features an array of open ports though one .NET remoting endpoint is vulnerable to a deserialisation attack.
-img: luke.png
-fig-caption: Luke
-categories: HackTheBox
-tags: [Medium, FreeBSD, Retired, CTF]
+img: os.jpeg
+fig-caption: Algernon
+categories: ProvingGrounds
+tags: [Easy, Windows, Practice, CVE]
 ---
 ## Overview
 Algernon is an easy Windows box featuring an outdated installation of a mail server. It features an array of open ports though one .NET remoting endpoint is vulnerable to a deserialisation attack.
