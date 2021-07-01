@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Proving Grounds - Algernon
-date: 2020-09-18 12:16:22 +0100
+date: 2020-10-07 12:16:22 +0100
 description: Algernon is an easy Windows box featuring an outdated installation of a mail server. It features an array of open ports though one .NET remoting endpoint is vulnerable to a deserialisation attack.
 img: os.jpeg
 fig-caption: Algernon
