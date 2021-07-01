@@ -33,21 +33,21 @@ After some initial enumeration a SmarterMail mail server is found on port 9998. 
 ```
 ┌──[192.168.49.200]-(calxus㉿calxus)-[~/PG/Algernon]
 └─$ searchsploit smartermail
---------------------------------------------------------------------------------------------------------------------------- ---------------------------------
- Exploit Title                                                                                                             |  Path
---------------------------------------------------------------------------------------------------------------------------- ---------------------------------
-SmarterMail 16 - Arbitrary File Upload                                                                                     | multiple/webapps/48580.py
-SmarterMail 7.1.3876 - Directory Traversal                                                                                 | windows/remote/15048.txt
-SmarterMail 7.3/7.4 - Multiple Vulnerabilities                                                                             | asp/webapps/16955.txt
-SmarterMail 8.0 - Multiple Cross-Site Scripting Vulnerabilities                                                            | asp/webapps/16975.txt
-SmarterMail < 7.2.3925 - LDAP Injection                                                                                    | asp/webapps/15189.txt
-SmarterMail < 7.2.3925 - Persistent Cross-Site Scripting                                                                   | asp/webapps/15185.txt
-SmarterMail Build 6985 - Remote Code Execution                                                                             | windows/remote/49216.py
-SmarterMail Enterprise and Standard 11.x - Persistent Cross-Site Scripting                                                 | asp/webapps/31017.php
-smartermail free 9.2 - Persistent Cross-Site Scripting                                                                     | windows/webapps/20362.py
-SmarterTools SmarterMail 4.3 - 'Subject' HTML Injection                                                                    | php/webapps/31240.txt
-SmarterTools SmarterMail 5.0 - HTTP Request Handling Denial of Service                                                     | windows/dos/31607.py
---------------------------------------------------------------------------------------------------------------------------- ---------------------------------
+---------------------------------------------------------------------------------------------- ---------------------------------
+ Exploit Title                                                                                |  Path
+---------------------------------------------------------------------------------------------- ---------------------------------
+SmarterMail 16 - Arbitrary File Upload                                                        | multiple/webapps/48580.py
+SmarterMail 7.1.3876 - Directory Traversal                                                    | windows/remote/15048.txt
+SmarterMail 7.3/7.4 - Multiple Vulnerabilities                                                | asp/webapps/16955.txt
+SmarterMail 8.0 - Multiple Cross-Site Scripting Vulnerabilities                               | asp/webapps/16975.txt
+SmarterMail < 7.2.3925 - LDAP Injection                                                       | asp/webapps/15189.txt
+SmarterMail < 7.2.3925 - Persistent Cross-Site Scripting                                      | asp/webapps/15185.txt
+SmarterMail Build 6985 - Remote Code Execution                                                | windows/remote/49216.py
+SmarterMail Enterprise and Standard 11.x - Persistent Cross-Site Scripting                    | asp/webapps/31017.php
+smartermail free 9.2 - Persistent Cross-Site Scripting                                        | windows/webapps/20362.py
+SmarterTools SmarterMail 4.3 - 'Subject' HTML Injection                                       | php/webapps/31240.txt
+SmarterTools SmarterMail 5.0 - HTTP Request Handling Denial of Service                        | windows/dos/31607.py
+---------------------------------------------------------------------------------------------- ---------------------------------
 ```
 In the vulnerability we find that it relies on a .NET remote endpoint being available, thankfully this endpoint does seem to be exposed.
 ```
