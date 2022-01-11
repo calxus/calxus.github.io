@@ -6,14 +6,22 @@ if (url.searchParams.get("image") == null) {
 }
 
 function retrieveImage() {
-    $.get("../assets/img/gallery/" + url.searchParams.get("image") + ".txt", function(data, status){
-        canvas = document.createElement("canvas");
-        ctx = canvas.getContext('2d');
-        response = data.split("\n")
-        resolution = response[0].split(",")
-        canvas.width = parseInt(resolution[0]);
-        canvas.height = parseInt(resolution[1]);
-        decryptAES(response[1])
+    $('.spinner-box').show();
+    $('img').css("filter", "brightness(50%)");
+    $.ajax({
+        url: "../assets/img/gallery/" + url.searchParams.get("image") + ".txt", 
+        success: function(data, status) {
+            canvas = document.createElement("canvas");
+            ctx = canvas.getContext('2d');
+            response = data.split("\n");
+            resolution = response[0].split(",")
+            canvas.width = parseInt(resolution[0]);
+            canvas.height = parseInt(resolution[1]);
+            decryptAES(response[1]);
+        },
+        complete: function() {
+            $('.spinner-box').hide();
+        }
     });
 }
 
