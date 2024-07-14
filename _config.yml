@@ -5,7 +5,7 @@ baseurl: ""
 url: "https://calxus.github.io"
 
 author: Gordon Adam-Santiago
-author-img: calxus.png # add your photo
+author-img: profile.png # add your photo
 about-author: DevOps Engineer with a penchant for pentesting and proud owner of an over-engineered home network
 social-twitter: TheCalxus
 social-github: calxus
